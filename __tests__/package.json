@@ -1,0 +1,10 @@
+{
+  "name": "__tests__",
+  "version": "1.0.0",
+  "dependencies": {
+    "frisby": "^2.0.5",
+    "jest-html-reporter": "^3.3.0",
+    "joi": "^13.0.0",
+    "lodash": "^4.17.4"
+  }
+}

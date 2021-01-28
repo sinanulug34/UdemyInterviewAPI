@@ -4,7 +4,6 @@ const Joi = frisby.Joi;
 var assert = require("assert");
 
 it('Verify that status is 200 and content type must be application-json', function (done, response) {
-    jest.setTimeout(120000)
     return frisby.get('https://restcountries.eu/rest/v2')
         .expect('status', 200)
         .expect('header', 'Content-Type', 'application/json;charset=UTF-8')
@@ -12,7 +11,6 @@ it('Verify that status is 200 and content type must be application-json', functi
 });
 
 it('Result array lengt should be 250 char.', function (done) {
-    jest.setTimeout(120000)
     return frisby
         .get('https://restcountries.eu/rest/v2')
         .expect('status', 200)
@@ -24,7 +22,6 @@ it('Result array lengt should be 250 char.', function (done) {
 
 
 it('Alphacode control', function () {
-    jest.setTimeout(1200000)
     return frisby
         .get('https://restcountries.eu/rest/v2')
         .expect('json', '?.name', 'Turkey')
@@ -33,7 +30,6 @@ it('Alphacode control', function () {
 });
 
 it('Array list should be sorted by name', function (done) {
-    jest.setTimeout(1200000)
     return frisby
         .get('https://restcountries.eu/rest/v2')
         .then(function (response) {

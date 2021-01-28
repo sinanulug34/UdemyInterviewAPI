@@ -31,17 +31,17 @@ it('test2', function () {
 it('test3', function () {
     return frisby.get('https://restcountries.eu/rest/v2/name/turkey')
         .expect('jsonTypes', '*', {
-            'name': Joi.string(),
-            'alpha2Code':Joi.string(),
-            'population': Joi.number(),
-            'area':Joi.number()
+            'name': Joi.string().required(),
+            'alpha2Code':Joi.string().required(),
+            'population': Joi.number().required(),
+            'area':Joi.number().required()
         });
 });
 
 it('test4', function () {
     return frisby.get('https://restcountries.eu/rest/v2/name/turkey')
         .expect('jsonTypes', '*', {
-            'name': Joi.string().required(),
-            'population': Joi.number().required()
+            'name': Joi.string(),
+            'population': Joi.number()
         });
 });

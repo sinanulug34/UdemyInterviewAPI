@@ -26,7 +26,6 @@ it('Result array lengt should be 250 char.', function (done) {
 it('Alphacode control', function () {
     jest.setTimeout(1200000)
     return frisby
-        //.get('https://restcountries.eu/rest/v2/name/Turkey')
         .get('https://restcountries.eu/rest/v2')
         .expect('json', '?.name', 'Turkey')
         .expect('json', '?.alpha2Code', 'TR')
@@ -60,4 +59,5 @@ function isSorted(array) {
         return result;
     });
 }
+
 

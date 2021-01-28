@@ -1,7 +1,6 @@
 const frisby = require('frisby');
 const _ = require("lodash");
 const Joi = frisby.Joi;
-var assert = require("assert");
 
 
 it('test1', function () {

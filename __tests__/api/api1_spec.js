@@ -1,16 +1,15 @@
 const frisby = require('frisby');
 const _ = require("lodash");
-const Joi = frisby.Joi;
 var assert = require("assert");
 
-it('Verify that status is 200 and content type must be application-json', function (done, response) {
+it('test1', function (done, response) {
     return frisby.get('https://restcountries.eu/rest/v2')
         .expect('status', 200)
         .expect('header', 'Content-Type', 'application/json;charset=UTF-8')
         .done(done);
 });
 
-it('Result array lengt should be 250 char.', function (done) {
+it('test2', function (done) {
     return frisby
         .get('https://restcountries.eu/rest/v2')
         .expect('status', 200)
@@ -21,7 +20,7 @@ it('Result array lengt should be 250 char.', function (done) {
 });
 
 
-it('Alphacode control', function () {
+it('test3', function () {
     return frisby
         .get('https://restcountries.eu/rest/v2')
         .expect('json', '?.name', 'Turkey')
@@ -29,7 +28,7 @@ it('Alphacode control', function () {
         .expect('json', '?.alpha3Code', 'TUR')
 });
 
-it('Array list should be sorted by name', function (done) {
+it('test4', function (done) {
     return frisby
         .get('https://restcountries.eu/rest/v2')
         .then(function (response) {

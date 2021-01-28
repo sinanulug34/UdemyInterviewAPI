@@ -11,7 +11,6 @@ it('test1', function () {
         .expect('jsonTypes', Joi.array())
         .then(function (response) {
             let responseArrayLength = response.json.length;
-            console.log(responseArrayLength);
             expect(response.json.length).toBe(1);
         });
 });
@@ -23,7 +22,6 @@ it('test2', function () {
         .expect('jsonTypes', Joi.array())
         .then(function (response) {
             let responseArrayLength = response.json.length;
-            console.log(responseArrayLength);
             expect(response.json.length).toBe(1);
         });
 });
